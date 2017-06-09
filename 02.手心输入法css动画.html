@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style type="text/css">
+			#first {
+				width: 80%;
+				height: 600px;
+				border-bottom: 2px solid cornflowerblue;
+				margin: 0 auto;
+			}
+			
+			.diannao {
+				width: 452px;
+				height: 347px;
+				overflow: hidden;
+				position: absolute;
+				left: 560px;
+				top: 270px;
+				animation: move 0.2s linear 0s forwards;
+			}
+			
+			@-webkit-keyframes move {
+				from {
+					transform: rotateZ(30deg);
+				}
+				to {
+					transform: rotateZ(0deg);
+				}
+			}
+			
+			.taideng {
+				width: 304px;
+				height: 379px;
+				overflow: hidden;
+				position: absolute;
+				left: 100px;
+				top: 230px;
+				animation: deng 1s linear 0s forwards;
+				z-index: 100;
+			}
+			
+			.taideng img {
+				overflow: hidden;
+				position: absolute;
+				left: -452px;
+			}
+			
+			@-webkit-keyframes deng {
+				from {
+					left: 100px;
+				}
+				to {
+					left: 300px;
+				}
+			}
+			
+			.shuye {
+				width: 239px;
+				height: 150px;
+				overflow: hidden;
+				position: absolute;
+				left: 1px;
+				top: 4px;
+				animation: shuye 2s linear 0s forwards;
+			}
+			
+			@-webkit-keyframes shuye {
+				from {
+					left: 1000px;
+					top: 800px;
+					transform: rotate(0deg);
+				}
+				to {
+					left: 0px;
+					top: 450px;
+					transform: rotate(14400deg);
+				}
+			}
+			
+			.shuye2 {
+				width: 96px;
+				height: 65px;
+				overflow: hidden;
+				position: absolute;
+				left: 1px;
+				top: 4px;
+				animation: shuye2 5s linear 0s infinite forwards;
+				;
+			}
+			
+			.shuye2 img {
+				overflow: hidden;
+				position: absolute;
+				top: -149px;
+			}
+			
+			@-webkit-keyframes shuye2 {
+				0% {
+					left: 0px;
+					top: 100px;
+					transform: rotate(0deg);
+				}
+				50% {
+					left: 300px;
+					top: 350px;
+					transform: rotate(200deg);
+				}
+				75% {
+					left: 500px;
+					top: 550px;
+					transform: rotate(0deg);
+				}
+				100% {
+					left: 500px;
+					top: 550px;
+					transform: rotate(200deg);
+				}
+			}
+			
+			.rocket {
+				width: 249px;
+				height: 221px;
+				position: absolute;
+				background: url(img/02.png) no-repeat -239px -1px;
+				right: 180px;
+				top: 130px;
+				-webkit-animation: rocket 0.1s linear 0s infinite alternate;
+			}
+			
+			@-webkit-keyframes rocket {
+				0% {
+					transform: translate(-30px, -30px);
+				}
+				100% {
+					transform: none;
+				}
+			}
+			
+			.line1 {
+				width: 77px;
+				height: 70px;
+				position: absolute;
+				background: url(img/02.png) no-repeat -162px -152px;
+				right: 250px;
+				top: 30px;
+				-webkit-animation: line 0.4s linear 0s infinite;
+			}
+			
+			.line2 {
+				width: 156px;
+				height: 149px;
+				position: absolute;
+				background: url(img/02.png) no-repeat -239px -224px;
+				right: 150px;
+				top: 230px;
+				-webkit-animation: line 0.4s linear 0.6s infinite;
+			}
+			
+			@-webkit-keyframes line {
+				0% {
+					transform: translate(200px, -200px);
+					opacity: 0;
+				}
+				100% {
+					transform: translate(-200px, 200px);
+					opacity: 1;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="first">
+
+		</div>
+		<div class="diannao">
+			<img src="img/01.png" />
+		</div>
+		<div class="taideng">
+			<img src="img/01.png" />
+		</div>
+		<div class="shuye">
+			<img src="img/02.png" />
+		</div>
+		<div class="shuye2">
+			<img src="img/02.png" />
+		</div>
+		<section>
+			<div class="rocket"></div>
+			<div class="line1">
+
+			</div>
+			<div class="line2">
+
+			</div>
+		</section>
+	</body>
+	<script src="jq.mousewheel.js"></script>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+	</script>
+
+</html>

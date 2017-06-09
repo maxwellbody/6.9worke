@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.stage {
+				width: 80%;
+				height: 400px;
+				border: 2px solid #000;
+				margin: 50px auto;
+				position: relative;
+				perspective: 500px;
+			}
+			
+			.stage ul {
+				list-style: none;
+			}
+			
+			.stage ul li {
+				position: absolute;
+				top: 50px;
+				left: 400px;
+				border: 1px solid #000;
+				transition: all 1s ease 0s;
+			}
+			
+			.stage ul li img {
+				width: 400px;
+				height: 250px;
+			}
+			
+			.stage ul li.center {
+				z-index: 800;
+				transform: none;
+			}
+			
+			.stage ul li.left1 {
+				z-index: 600;
+				transform: rotateY(30deg) translateX(-100px) translateZ(-200px)
+			}
+			
+			.stage ul li.left2 {
+				z-index: 500;
+				transform: rotateY(30deg) translateX(-200px) translateZ(-300px)
+			}
+			
+			.stage ul li.left3 {
+				z-index: 400;
+				transform: rotateY(30deg) translateX(-300px) translateZ(-400px)
+			}
+			
+			.stage ul li.left4 {
+				z-index: 300;
+				transform: rotateY(30deg) translateX(-400px) translateZ(-500px)
+			}
+			
+			.stage ul li.left5 {
+				z-index: 200;
+				transform: rotateY(30deg) translateX(-500px) translateZ(-600px)
+			}
+			
+			.stage ul li.left6 {
+				z-index: 100;
+				transform: rotateY(30deg) translateX(-600px) translateZ(-700px)
+			}
+			
+			.stage ul li.right1 {
+				z-index: 600;
+				transform: rotateY(-30deg) translateX(100px) translateZ(-200px)
+			}
+			
+			.stage ul li.right2 {
+				z-index: 500;
+				transform: rotateY(-30deg) translateX(200px) translateZ(-300px)
+			}
+			
+			.stage ul li.right3 {
+				z-index: 400;
+				transform: rotateY(-30deg) translateX(300px) translateZ(-400px)
+			}
+			
+			.stage ul li.right4 {
+				z-index: 300;
+				transform: rotateY(-30deg) translateX(400px) translateZ(-400px)
+			}
+			
+			.stage ul li.right5 {
+				z-index: 200;
+				transform: rotateY(-30deg) translateX(500px) translateZ(-500px)
+			}
+			
+			.stage ul li.right6 {
+				z-index: 100;
+				transform: rotateY(-30deg) translateX(600px) translateZ(-600px)
+			}
+		</style>
+	</head>
+
+	<body>
+		<input id="leftBtn" type="button" name="" value="切换上一张">
+		<input id="rightBtn" type="button" name="" value="切换下一张">
+
+		<div class="stage">
+			<ul>
+				<li class="left3"> <img src="img/1.jpg" alt=""> </li>
+				<li class="left2"> <img src="img/2.jpg" alt=""> </li>
+				<li class="left1"> <img src="img/3.jpg" alt=""> </li>
+				<li class="center"> <img src="img/4.jpg" alt=""> </li>
+				<li class="right1"> <img src="img/5.jpg" alt=""> </li>
+				<li class="right2"> <img src="img/6.jpg" alt=""> </li>
+				<li class="right3"> <img src="img/7.jpg" alt=""> </li>
+			</ul>
+		</div>
+		<script src='jquery.js'>
+		</script>
+		<script>
+			var idx = 3;
+			$("#leftBtn").click(function() {
+				idx++;
+
+				if(idx > 6) {
+					idx = 6;
+					return;
+				}
+				setClass(idx);
+
+			})
+			var idx = 3;
+			$("#rightBtn").click(function() {
+				idx--;
+
+				if(idx < 0) {
+					idx = 0;
+					return;
+				}
+				setClass(idx);
+
+			})
+
+			var $lis = $('li');
+			var classNameArr = ['left6', 'left5', 'left4', 'left3', 'left2', "left1", "center", "right1", 'right2', "right3", "right4", "right5", "right6"];
+
+			function setClass(idx) {
+				var arr = classNameArr.slice(idx, idx + 7);
+				console.log(arr)
+				$lis.each(function(i) {
+					console.log(i)
+					$(this).attr("class", arr[i]);
+				})
+			}
+		</script>
+	</body>
+
+</html>
